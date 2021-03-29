@@ -11,6 +11,6 @@ defmodule Explorer.Repo.Migrations.CreateNewBlockRewards do
       timestamps(null: false, type: :utc_datetime)
     end
 
-    create(unique_index(:block_rewards, [:address_hash, :address_type, :block_hash]))
+    create(index(:block_rewards, [:address_hash, :address_type, :block_hash]))
   end
 end

@@ -3,7 +3,7 @@ defmodule Explorer.Repo.Migrations.AddUniqueIndexToRewards do
 
   def change do
     create(
-      unique_index(
+      index(
         :block_rewards,
         [:address_hash, :block_hash, :address_type]
       )

@@ -44,13 +44,13 @@ defmodule Explorer.Chain.Import.Runner.Block.Rewards do
   def timeout, do: @timeout
 
   @spec insert(Repo.t(), [map()], %{
-          optional(:on_conflict) => Import.Runner.on_conflict(),
+          optional(:_on_conflict) => Import.Runner.on_conflict(),
           required(:timeout) => timeout,
           required(:timestamps) => Import.timestamps()
         }) :: {:ok, [Reward.t()]} | {:error, [Changeset.t()]}
   defp insert(repo, changes_list, %{timeout: timeout, timestamps: timestamps} = options)
        when is_list(changes_list) do
-    on_conflict = Map.get_lazy(options, :on_conflict, &default_on_conflict/0)
+    _on_conflict = Map.get_lazy(options, :_on_conflict, &default_on_conflict/0)
 
     # Enforce Reward ShareLocks order (see docs: sharelocks.md)
     ordered_changes_list = Enum.sort_by(changes_list, &{&1.block_hash, &1.address_hash, &1.address_type})
@@ -58,8 +58,6 @@ defmodule Explorer.Chain.Import.Runner.Block.Rewards do
     Import.insert_changes_list(
       repo,
       ordered_changes_list,
-      conflict_target: [:address_hash, :address_type, :block_hash],
-      on_conflict: on_conflict,
       for: ecto_schema_module(),
       returning: true,
       timeout: timeout,
