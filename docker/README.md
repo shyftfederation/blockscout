@@ -1,3 +1,9 @@
+# Quickstart
+
+- sudo bash
+- source ./env-sample
+- make start
+
 # BlockScout Docker Integration
 
 This integration is not production ready, and should be used for local BlockScout deployment only.
