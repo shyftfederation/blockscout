@@ -1,0 +1,18 @@
+
+export COIN=SHFT
+export NETWORK=POA
+export SUBNETWORK=shyft
+export LOGO=/images/shyft-logo.svg
+export LOGO_FOOTER=/images/shyft-logo.svg
+export ETHEREUM_JSONRPC_VARIANT=parity
+export ETHEREUM_JSONRPC_HTTP_URL=http://127.0.0.1:8545
+export ETHEREUM_JSONRPC_WS_URL=ws://127.0.0.1:8545
+export ETHEREUM_JSONRPC_TRACE_URL=http://127.0.0.1:8545
+
+# not (much of) a big deal if it can't find this; is for genesis acct balances
+export CHAIN_SPEC_PATH=chainspec.json
+
+# you can make a new secret key 
+# # docker exec -it <docker-id> mix phx.gen.secret"
+export SECRET_KEY_BASE=mIgAuSht/FyWO0dWmMYlkjmi1RMi4nmXEzsFYqRXDDbg5Q0t1X0kUH38CKvnliXA
+
