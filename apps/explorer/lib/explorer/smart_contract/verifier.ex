@@ -127,10 +127,6 @@ defmodule Explorer.SmartContract.Verifier do
       compiler_version_from_input != generated_compiler_version ->
         {:error, :compiler_version}
 
-      generated_bytecode != blockchain_bytecode_without_whisper &&
-          !try_library_verification(generated_bytecode, blockchain_bytecode_without_whisper) ->
-        {:error, :generated_bytecode}
-
       has_constructor_with_params?(abi) && autodetect_contructor_arguments ->
         result = ConstructorArguments.find_constructor_arguments(address_hash, abi, contract_source_code, contract_name)
 
