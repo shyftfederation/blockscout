@@ -1,3 +1,4 @@
+
 # credo:disable-for-this-file
 defmodule Explorer.SmartContract.Verifier do
   @moduledoc """
@@ -127,7 +128,7 @@ defmodule Explorer.SmartContract.Verifier do
       compiler_version_from_input != generated_compiler_version ->
         {:error, :compiler_version}
 
-      has_constructor_with_params?(abi) && autodetect_contructor_arguments ->
+      has_constructor_with_params?(abi) && autodetect_constructor_arguments ->
         result = ConstructorArguments.find_constructor_arguments(address_hash, abi, contract_source_code, contract_name)
 
         if result do
@@ -353,3 +354,10 @@ defmodule Explorer.SmartContract.Verifier do
   defp parse_boolean("true"), do: true
   defp parse_boolean("false"), do: false
 end
+
+
+
+
+
+
+
