@@ -328,7 +328,7 @@ start: build postgres
 	@echo "==> Starting blockscout"
 	@docker run --rm --name $(BS_CONTAINER_NAME) \
 					$(BLOCKSCOUT_CONTAINER_PARAMS) \
-					-p 4000:4000 \
+					-p 4000:80 \
 					$(DOCKER_IMAGE) /bin/sh -c "mix phx.server"
 
 run: start
