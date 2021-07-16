@@ -1,0 +1,26 @@
+
+export COIN=SHFTB
+export NETWORK=POA
+export SUBNETWORK=Shyft 
+export LOGO=/images/shyft-logo.svg
+export LOGO_FOOTER=/images/shyft-logo.svg
+export ETHEREUM_JSONRPC_VARIANT=parity
+export ETHEREUM_JSONRPC_HTTP_URL=http://relay:64738
+export ETHEREUM_JSONRPC_WS_URL=ws://relay:64738
+export ETHEREUM_JSONRPC_TRACE_URL=http://relay:64738
+export VALIDATORS_CONTRACT=0x1e3cdF6a0dEcA95f0Bd3E1AdC702dC7bbB
+export EMISSION_FORMAT=POA
+export REWARDS_CONTRACT=0x000000000000000000000000000000073410f33D
+export API_URL=http://bxtest.shyft.network/
+export WEBAPP_URL=http://bxtest.shyft.network/
+export DISABLE_EXCHANGE_RATES=true
+export SHOW_PRICE_CHART=false
+
+
+# not (much of) a big deal if it can't find this; is for genesis acct balances
+export CHAIN_SPEC_PATH=ShyftTestnet.json
+
+# you can make a new secret key 
+# # docker exec -it <docker-id> mix phx.gen.secret"
+export SECRET_KEY_BASE=mIgAuSht/FyWO0dWmMYlkjmi1RMi4nmXEzsFYqRXDDbg5Q0t1X0kUH38CKvnliXA
+
