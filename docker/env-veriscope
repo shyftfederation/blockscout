@@ -1,0 +1,30 @@
+export LANG=en_US.UTF-8
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export COIN=SHFT
+export NETWORK=POA
+export SUBNETWORK=shyft
+export LOGO=/images/shyft-logo.svg
+export LOGO_FOOTER=/images/shyft-logo.svg
+export ETHEREUM_JSONRPC_VARIANT=parity
+export ETHEREUM_JSONRPC_HTTP_URL=http://10.198.0.84:9400
+export ETHEREUM_JSONRPC_WS_URL=ws://10.198.0.84:9400
+export ETHEREUM_JSONRPC_TRACE_URL=http://10.198.0.84:9400
+export SECRET_KEY_BASE=mIgAuSht/FyWO0dWmMYlkjmi1RMi4nmXEzsFYqRXDDbg5Q0t1X0kUH38CKvnliXA
+export CHAIN_SPEC_PATH=/opt/shyft/vaspGenesis.json
+export ENABLE_SOURCIFY_INTEGRATION=true
+export CHAIN_ID=120852482
+
+export API_URL=https://bx.veriscope.network/
+export WEBAPP_URL=https://bx.veriscope.network/
+export DISABLE_EXCHANGE_RATES=true
+export SHOW_PRICE_CHART=false
+
+#export CERTFILE=/etc/letsencrypt/live/bx.test.veriscope.network/fullchain.pem
+#export KEYFILE=/etc/letsencrypt/live/bx.test.veriscope.network/privkey.pem
+
+#export DATABASE_URL="postgres://localhost/blockscout?user=blockscout&password=Oopotaen6ahf"
+#export PGDATABASE=blockscout
+#export PGHOST=localhost
+#export PGUSER=blockscout
+#export PGPASSWORD=Oopotaen6ahf
+
