@@ -375,11 +375,9 @@ defmodule Explorer.Chain do
           {-emission_reward.block.number, 1}
 
         item ->
-          if item.block_number do
-            {-item.block_number, -item.index}
-          else
-            {0, -item.index}
-          end
+          block_number = if item.block_number, do: -item.block_number, else: 0
+          index = if item.index, do: -item.index, else: 0
+          {block_number, index}
       end
     end)
     |> Enum.dedup_by(fn item ->
@@ -1113,13 +1111,8 @@ defmodule Explorer.Chain do
             select: %{
               contract_address_hash: token.contract_address_hash,
               symbol: token.symbol,
-              name:
-                fragment(
-                  "'<b>' || coalesce(?, '') || '</b>' || ' (' || coalesce(?, '') || ') ' || '<i>' || coalesce(?::varchar(255), '') || ' holder(s)' || '</i>'",
-                  token.name,
-                  token.symbol,
-                  token.holder_count
-                )
+              name: token.name,
+              holder_count: token.holder_count
             },
             order_by: [desc: token.holder_count]
           )
