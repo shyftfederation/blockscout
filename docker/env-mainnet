@@ -18,7 +18,7 @@ export SHOW_PRICE_CHART=false
 
 
 # not (much of) a big deal if it can't find this; is for genesis acct balances
-export CHAIN_SPEC_PATH=ShyftMainnet.json
+export CHAIN_SPEC_PATH=shyft/ShyftMainnet.json
 
 # you can make a new secret key 
 # # docker exec -it <docker-id> mix phx.gen.secret"

@@ -35,7 +35,7 @@ defmodule Explorer.ChainSpec.POA.Importer do
   }
   # ee8d75ff=keccak256(emissionFundsAmount())
   @emission_funds_amount_params %{"ee8d75ff" => []}
-  @emission_funds_block_start 5_098_087
+  @emission_funds_block_start 1
 
   def import_emission_rewards do
     if is_nil(rewards_contract_address()) do

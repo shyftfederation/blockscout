@@ -334,6 +334,8 @@ start: build postgres
 					$(BLOCKSCOUT_CONTAINER_PARAMS) \
 					-p 4000:80 \
 					$(DOCKER_IMAGE) /bin/sh -c "mix phx.server"
+					-p 4000:4000 \
+					$(DOCKER_IMAGE) /bin/sh -c "mix do ecto.create, ecto.migrate; mix phx.server"
 
 run: start
 
