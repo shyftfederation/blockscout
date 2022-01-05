@@ -62,7 +62,11 @@ config :block_scout_web, BlockScoutWeb.Endpoint,
     scheme: System.get_env("BLOCKSCOUT_PROTOCOL") || "http",
     host: System.get_env("BLOCKSCOUT_HOST") || "localhost",
     path: System.get_env("NETWORK_PATH") || "/",
+    port: System.get_env("PORT"),
     api_path: System.get_env("API_PATH") || "/"
+  ],
+  http: [
+    port: System.get_env("PORT"),
   ],
   render_errors: [view: BlockScoutWeb.ErrorView, accepts: ~w(html json)],
   pubsub_server: BlockScoutWeb.PubSub

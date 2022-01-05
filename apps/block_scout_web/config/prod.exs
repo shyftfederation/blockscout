@@ -21,9 +21,9 @@ config :block_scout_web, BlockScoutWeb.Endpoint,
   http: [port: System.get_env("PORT")],
   url: [
     scheme: System.get_env("BLOCKSCOUT_PROTOCOL") || "https",
-    port: System.get_env("PORT"),
     host: System.get_env("BLOCKSCOUT_HOST") || "localhost",
     path: System.get_env("NETWORK_PATH") || "/",
+    port: System.get_env("PORT") || 4000,
     api_path: System.get_env("API_PATH") || "/"
   ]
 

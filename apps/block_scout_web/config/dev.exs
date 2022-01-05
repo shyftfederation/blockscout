@@ -18,7 +18,7 @@ config :block_scout_web, BlockScoutWeb.Endpoint,
   secret_key_base:
     System.get_env("SECRET_KEY_BASE") || "RMgI4C1HSkxsEjdhtGMfwAHfyT6CKWXOgzCboJflfSm4jeAlic52io05KB6mqzc5",
   http: [
-    port: port || 4000
+    port: 4000
   ],
   url: [
     scheme: "http",
@@ -75,7 +75,7 @@ config :block_scout_web, BlockScoutWeb.Endpoint,
 config :block_scout_web, BlockScoutWeb.Tracer, env: "dev", disabled?: true
 
 config :logger, :block_scout_web,
-  level: :debug,
+  level: :warn,
   path: Path.absname("logs/dev/block_scout_web.log")
 
 # Set a higher stacktrace during development. Avoid configuring such
