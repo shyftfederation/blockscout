@@ -10,25 +10,25 @@ Restart=on-failure
 Environment=
 Environment=LANG=en_US.UTF-8
 Environment=PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
-Environment=COIN=SHFT
+Environment=COIN=SHFTT
 Environment=NETWORK=POA
-Environment=SUBNETWORK=shyft-tor
+Environment=SUBNETWORK=shyft-test
 Environment=LOGO=/images/shyft-logo.svg
 Environment=LOGO_FOOTER=/images/shyft-logo.svg
 Environment=ETHEREUM_JSONRPC_VARIANT=parity
-Environment=ETHEREUM_JSONRPC_HTTP_URL=http://relay:9400
-Environment=ETHEREUM_JSONRPC_WS_URL=ws://relay:9400
-Environment=ETHEREUM_JSONRPC_TRACE_URL=http://relay:9400
+Environment=ETHEREUM_JSONRPC_HTTP_URL=http://localhost:64739
+Environment=ETHEREUM_JSONRPC_WS_URL=ws://localhost:64739
+Environment=ETHEREUM_JSONRPC_TRACE_URL=http://localhost:64739
 Environment=SECRET_KEY_BASE=mIgAuSht/FyWO0dWmMYlkjmi1RMi4nmXEzsFYqRXDDbg5Q0t1X0kUH38CKvnliXA
-Environment=CHAIN_SPEC_PATH=/opt/shyft/chainspec/shyft-tor.json
-Environment=DATABASE_URL="postgres://localhost/blockscout?user=blockscout&password=Ahziesh5"
-Environment=CERTFILE=/etc/letsencrypt/live/torbx.shyft.network/fullchain.Environemnt pem
-Environment=KEYFILE=/etc/letsencrypt/live/torbx.shyft.network/privkey.pem
+Environment=CHAIN_SPEC_PATH=/opt/nm/chainspec/ShyftTestnet.json
+Environment=DATABASE_URL="postgres://localhost/blockscout?user=blockscout&password=Niete9ai"
+Environment=CERTFILE=/etc/letsencrypt/live/shyft.network/fullchain.pem
+Environment=KEYFILE=/etc/letsencrypt/live/shyft.network/privkey.pem
 
 Environment=PGDATABASE=blockscout
 Environment=PGHOST=localhost
 Environment=PGUSER=blockscout
-Environment=PGPASSWORD=Ahziesh5
+Environment=PGPASSWORD=Niete9ai
 
 WorkingDirectory=/opt/blockscout/
 ExecStart=/usr/bin/mix phx.server

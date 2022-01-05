@@ -1,7 +1,7 @@
 use Mix.Config
 
 # DO NOT make it `:debug` or all Ecto logs will be shown for indexer
-config :logger, :console, level: :info
+config :logger, :console, level: :warn
 
 config :logger, :ecto,
   level: :debug,
@@ -10,11 +10,7 @@ config :logger, :ecto,
 config :logger, :error, path: Path.absname("logs/dev/error.log")
 
 config :block_scout_web, BlockScoutWeb.Endpoint,
-    http: [port: 80],
-    https: [
-      port: 443,
-      cipher_suite: :strong,
-      certfile: System.get_env("CERTFILE") || "priv/cert/selfsigned.pem",
-      keyfile: System.get_env("KEYFILE") || "priv/cert/selfsigned_key.pem"
-    ]
+    http: [port: 4000]
+
+config :explorer, Explorer.ExchangeRates, enabled: false, store: :ets
 
