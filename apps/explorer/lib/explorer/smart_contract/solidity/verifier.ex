@@ -37,7 +37,7 @@ defmodule Explorer.SmartContract.Solidity.Verifier do
     end
   end
 
-  def evaluate_authenticity_inner(true, address_hash, params) do
+  defp evaluate_authenticity_inner(true, address_hash, params) do
     deployed_bytecode = Chain.smart_contract_bytecode(address_hash)
 
     creation_tx_input =
@@ -52,13 +52,16 @@ defmodule Explorer.SmartContract.Solidity.Verifier do
     params
     |> Map.put("creation_bytecode", creation_tx_input)
     |> Map.put("deployed_bytecode", deployed_bytecode)
-    |> Map.put("sources", %{"#{params["name"]}.sol" => params["contract_source_code"]})
+    |> Map.put("sources", %{
+      "#{params["name"]}.#{smart_contract_source_file_extension(parse_boolean(params["is_yul"]))}" =>
+        params["contract_source_code"]
+    })
     |> Map.put("contract_libraries", params["external_libraries"])
     |> Map.put("optimization_runs", prepare_optimization_runs(params["optimization"], params["optimization_runs"]))
     |> RustVerifierInterface.verify_multi_part()
   end
 
-  def evaluate_authenticity_inner(false, address_hash, params) do
+  defp evaluate_authenticity_inner(false, address_hash, params) do
     latest_evm_version = List.last(CodeCompiler.allowed_evm_versions())
     evm_version = Map.get(params, "evm_version", latest_evm_version)
 
@@ -81,6 +84,9 @@ defmodule Explorer.SmartContract.Solidity.Verifier do
       end
     end)
   end
+
+  defp smart_contract_source_file_extension(true), do: "yul"
+  defp smart_contract_source_file_extension(_), do: "sol"
 
   defp prepare_optimization_runs(false_, _) when false_ in [false, "false"], do: nil
 
@@ -200,6 +206,7 @@ defmodule Explorer.SmartContract.Solidity.Verifier do
                     |> Map.put("file_path", file_path)
                     |> Map.put("name", contract_name)
                     |> Map.put("secondary_sources", secondary_sources)
+                    |> Map.put("compiler_settings", map_json_input["settings"])
 
                   {:halt, {:ok, verified_data, additional_params}}
 
@@ -524,11 +531,13 @@ defmodule Explorer.SmartContract.Solidity.Verifier do
     Enum.any?(abi, fn el -> el["type"] == "constructor" && el["inputs"] != [] end)
   end
 
-  defp parse_boolean("true"), do: true
-  defp parse_boolean("false"), do: false
+  def parse_boolean("true"), do: true
+  def parse_boolean("false"), do: false
 
-  defp parse_boolean(true), do: true
-  defp parse_boolean(false), do: false
+  def parse_boolean(true), do: true
+  def parse_boolean(false), do: false
+
+  def parse_boolean(_), do: false
 end
 
 

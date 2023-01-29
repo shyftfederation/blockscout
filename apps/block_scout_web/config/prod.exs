@@ -15,13 +15,7 @@ import Config
 # which you typically run after static files are built.
 config :block_scout_web, BlockScoutWeb.Endpoint,
   cache_static_manifest: "priv/static/cache_manifest.json",
-  force_ssl: false,
-  url: [
-    host: "bx.shyft.network",
-    path: System.get_env("NETWORK_PATH") || "/",
-    port: System.get_env("PORT") || 4000,
-    api_path: System.get_env("API_PATH") || "/"
-  ]
+  force_ssl: false
 
 config :block_scout_web, BlockScoutWeb.Tracer, env: "production", disabled?: true
 
