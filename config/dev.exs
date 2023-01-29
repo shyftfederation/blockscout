@@ -9,8 +9,8 @@ config :logger, :ecto,
 
 config :logger, :error, path: Path.absname("logs/dev/error.log")
 
-config :block_scout_web, BlockScoutWeb.Endpoint,
-    http: [port: 4000]
-
-config :explorer, Explorer.ExchangeRates, enabled: false, store: :ets
+config :logger, :account,
+  level: :debug,
+  path: Path.absname("logs/dev/account.log"),
+  metadata_filter: [fetcher: :account]
 
