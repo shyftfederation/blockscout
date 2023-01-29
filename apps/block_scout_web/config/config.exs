@@ -20,6 +20,7 @@ config :block_scout_web, BlockScoutWeb.Endpoint,
   url: [
     path: System.get_env("NETWORK_PATH") || "/",
     port: System.get_env("PORT"),
+    host: System.get_env("API_HOST"),
     api_path: System.get_env("API_PATH") || "/"
   ],
   http: [

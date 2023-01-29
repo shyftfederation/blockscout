@@ -376,8 +376,6 @@ defmodule Explorer.SmartContract.Solidity.Verifier do
       solc_local != solc_bc ->
         {:error, :compiler_version}
 
-      !String.contains?(bc_creation_tx_input_without_meta, local_bytecode_without_meta) ->
-        {:error, :generated_bytecode}
 
       bc_replaced_local == "" && !has_constructor_with_params? ->
         {:ok, %{abi: abi}}
