@@ -9,27 +9,35 @@ defmodule BlockScoutWeb.LayoutView do
 
   @default_other_networks [
     %{
-      title: "POA",
-      url: "https://blockscout.com/poa/core"
+      title: "Shyft Mainnet",
+      url: "https://bx.shyft.network/"
     },
     %{
-      title: "Sokol",
-      url: "https://blockscout.com/poa/sokol",
+      title: "Shyft Ethstats",
+      url: "https://stats.shyft.network/"
+    },
+    %{
+      title: "Shyft Network Spec",
+      url: "https://stats.shyft.network/"
+    },
+    %{
+      title: "Veriscope Docs",
+      url: "https://docs.veriscope.network/"
+    },
+    %{
+      title: "Shyft Testnet",
+      url: "https://bx.testnet.shyft.network/",
       test_net?: true
     },
     %{
-      title: "Gnosis Chain",
-      url: "https://blockscout.com/xdai/mainnet"
+      title: "Shyft Testnet Ethstats",
+      url: "https://stats.testnet.shyft.network/",
+      test_net?: true
     },
     %{
-      title: "Ethereum Classic",
-      url: "https://blockscout.com/etc/mainnet",
-      other?: true
-    },
-    %{
-      title: "RSK",
-      url: "https://blockscout.com/rsk/mainnet",
-      other?: true
+      title: "Shyft Testnet Faucet",
+      url: "https://faucet.testnet.shyft.network/",
+      test_net?: true
     }
   ]
 

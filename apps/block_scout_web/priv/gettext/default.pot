@@ -1131,6 +1131,8 @@ msgstr ""
 msgid "ERC-721 "
 msgstr ""
 
+#: lib/block_scout_web/views/transaction_view.ex:211
+#, elixir-autogen, elixir-format
 msgid "ETH"
 msgstr "SHFT"
 

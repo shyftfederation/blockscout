@@ -75,7 +75,7 @@ export function compareChainIDs (explorerChainId, walletChainIdHex) {
   if (explorerChainId !== parseInt(walletChainIdHex)) {
     const networkDisplayNameFromWallet = props.getNetworkDisplayName(walletChainIdHex)
     const networkDisplayName = props.getNetworkDisplayName(explorerChainId)
-    const errorMsg = `You connected to ${networkDisplayNameFromWallet} chain in the wallet, but the current instance of Blockscout is for ${networkDisplayName} chain`
+    const errorMsg = `You connected to chain  ${walletChainIdHex}.  The Block Explorer is connected to ${explorerChainId}.  Check the network setting in your wallet.`
     return Promise.reject(new Error(errorMsg))
   } else {
     return Promise.resolve()

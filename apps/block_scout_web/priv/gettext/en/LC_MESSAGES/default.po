@@ -1131,6 +1131,8 @@ msgstr ""
 msgid "ERC-721 "
 msgstr ""
 
+#: lib/block_scout_web/views/transaction_view.ex:211
+#, elixir-autogen, elixir-format
 msgid "ETH"
 msgstr "SHFT"
 
@@ -1240,7 +1242,6 @@ msgstr ""
 msgid "Eth RPC"
 msgstr ""
 
-<<<<<<< HEAD
 #: lib/block_scout_web/templates/address/_current_coin_balance.html.eex:11
 #: lib/block_scout_web/templates/address/index.html.eex:5
 #: lib/block_scout_web/templates/address/overview.html.eex:181
@@ -1256,8 +1257,6 @@ msgstr ""
 msgid "Ether"
 msgstr "SHFT"
 
-=======
->>>>>>> e7557c42935ce1af30861a4c1b6d004ae883f1bc
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:211
 #: lib/block_scout_web/templates/api_docs/_eth_rpc_item.html.eex:164
 #, elixir-autogen, elixir-format
