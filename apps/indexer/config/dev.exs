@@ -32,6 +32,6 @@ config :logger, :empty_blocks_to_refetch,
   metadata_filter: [fetcher: :empty_blocks_to_refetch]
 
 config :logger, :block_import_timings,
-  level: :debug,
+  level: :warn,
   path: Path.absname("logs/dev/indexer/block_import_timings.log"),
   metadata_filter: [fetcher: :block_import_timings]
