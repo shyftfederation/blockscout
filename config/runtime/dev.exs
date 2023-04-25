@@ -23,12 +23,6 @@ config :block_scout_web, BlockScoutWeb.Endpoint,
   url: [
     scheme: "http",
     host: System.get_env("BLOCKSCOUT_HOST", "localhost")
-  ],
-  https: [
-    port: (port && port + 1) || 4001,
-    cipher_suite: :strong,
-    certfile: System.get_env("CERTFILE") || "priv/cert/selfsigned.pem",
-    keyfile: System.get_env("KEYFILE") || "priv/cert/selfsigned_key.pem"
   ]
 
 ########################
